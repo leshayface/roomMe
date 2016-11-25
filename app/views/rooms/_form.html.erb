@@ -1,7 +1,7 @@
 <%= form_for(room) do |f| %>
   <% if room.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(room.errors.count, "error") %> prohibited this leshay room from being saved:</h2>
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
 
       <ul>
       <% room.errors.full_messages.each do |message| %>
@@ -21,6 +21,22 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= f.label :rentPerMonth %>
+    <%= f.text_area :rentPerMonth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preferedGender %>
+    <%= f.text_area :preferedGender %>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  
   <%= f.fields_for :location do |d| %>
     <div class="field">
         <%= d.label :suburb %>
@@ -40,7 +56,4 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
