@@ -21,6 +21,24 @@
     <%= f.text_area :description %>
   </div>
 
+  <%= f.fields_for :location do |d| %>
+    <div class="field">
+        <%= d.label :suburb %>
+        <%= d.text_area :suburb %>
+    </div>
+    <div class="field">
+        <%= d.label :city %>
+        <%= d.text_area :city %>
+    </div>
+    <div class="field">
+        <%= d.label :province %>
+        <%= d.text_area :province %>
+    </div>
+    <div class="field">
+        <%= d.label :country %>
+        <%= d.text_area :country %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

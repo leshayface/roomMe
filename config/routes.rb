@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   get 'users/rooms'
 
   get 'display/allrooms'
